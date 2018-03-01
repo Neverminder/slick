@@ -142,7 +142,7 @@ class ModelBuilderTest extends AsyncTest[JdbcTestDB] {
       model <- createModel(ignoreInvalidDefaults=false)
       _ = {
         // check that the model matches the table classes
-        assertEquals( model.tables.toString, 5, model.tables.size )
+        assertEquals( model.tables.toString, 7, model.tables.size )
         val categories = model.tables.filter(_.name.table.toUpperCase=="CATEGORIES").head
         assertEquals( 2, categories.columns.size )
         assertEquals( None, categories.primaryKey )
